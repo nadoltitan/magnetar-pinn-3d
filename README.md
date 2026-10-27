@@ -9,13 +9,17 @@ physics-informed neural network (PINN) computed both. The network is trained so 
 the force-free Maxwell equations on a Schwarzschild (curved spacetime) background. No simulation data is
 used. The physics equations themselves are the loss.
 
-Two models can be compared with the Model slider:
+Two models can be compared with the Model slider. They share the same network, recipe, spin and training
+budget. The only difference is the twist.
 
-| | Model 05 (this work) | Model 01 (reproduction) |
+| | Twisted | Untwisted control |
 |---|---|---|
-| What it is | Twisted and rotating magnetosphere, with E and B trained together | Reproduction of the static twisted model of Stefanou et al., MNRAS 2025 (alpha_0 = 2.5) |
-| Spin | Trained at the real spin of PSR J1745-2900 | Trained without rotation. For display, E is the corotation field at the same spin |
-| Twist | Hot spot at 45 deg colatitude, alpha_0 = 2.5 | Same hot spot, alpha_0 = 2.5 |
+| What it is | Twisted and rotating magnetosphere, with E and B trained together | The same model trained with the twist switched off |
+| Twist | Hot spot at 45 deg colatitude, alpha_0 = 2.5 | alpha = 0 everywhere, a plain dipole |
+| Spin | Trained at the real spin of PSR J1745-2900 | Same |
+
+The twisted field carries a toroidal component (B_phi) and a current-carrying hot spot on the surface. The
+untwisted control has no toroidal field, so it shows what the rotating dipole looks like without the twist.
 
 ## Parameters (both models)
 
